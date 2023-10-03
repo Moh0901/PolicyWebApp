@@ -1,0 +1,117 @@
+<div class="relative isolate bg-gray-200 px-6 py-24 sm:py-20 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Add New Policy</h2>
+    </div>
+    <form [formGroup]="addPolicyForm" (ngSubmit)="onPolicySubmitted()" class="mx-auto mt-12 max-w-xl sm:mt-16">
+        <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+            <div class="sm:col-span-2">
+                <label for="policyname" class="block text-sm font-semibold leading-6 text-gray-900">Policy Name</label>
+                <div class="mt-2.5">
+                    <input type="text" name="policyname" id="policyname" formControlName="policyname"
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+            </div>
+
+            <div class="sm:col-span-2">
+                <label for="company" class="block text-sm font-semibold leading-6 text-gray-900">Policy Company</label>
+                <div class="mt-2.5">
+                    <input type="text" name="company" id="company" formControlName="company"
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+            </div>
+
+            <div>
+                <label for="startdate" class="block text-sm font-semibold leading-6 text-gray-900">Policy Start Date</label>
+                <div class="mt-2.5">
+                    <input type="text" name="startdate" id="startdate" formControlName="startdate"
+                        autocomplete="given-name"
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+            </div>
+            <div>
+                <label for="duration" class="block text-sm font-semibold leading-6 text-gray-900">Duration</label>
+                <div class="mt-2.5">
+                    <input type="text" name="duration" id="duration" formControlName="duration"
+                        autocomplete="family-name" placeholder="Please Enter Duration in years."
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+            </div>
+
+            <div>
+                <label for="policytype" class="block text-sm font-semibold leading-6 text-gray-900">Policy Type</label>
+                <div class="mt-2.5">
+                    <!-- <input type="text" name="policytype" id="policytype" formControlName="policytype"
+                        autocomplete="given-name"
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"> -->
+                        <select name="policytype" id="policytype" formControlName="policytype"
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            <option value="" selected disabled>Select...</option>
+                            <option value="1">Vechicle Insurance</option>
+                            <option value="2">Travel Insurance</option>
+                            <option value="3">Life Insurance</option>
+                            <option value="4">Health Insurance</option>
+                            <option value="5">Child Plans</option> 
+                            <option value="6">Retirement Plans</option>
+                        </select>
+                </div>
+            </div>
+            <div>
+                <label for="usertype" class="block text-sm font-semibold leading-6 text-gray-900">User Type</label>
+                <div class="mt-2.5">
+                    <!-- <input type="text" name="usertype" id="usertype" formControlName="usertype"
+                        autocomplete="family-name"
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"> -->
+                        <select name="usertype" id="usertype" formControlName="usertype"
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            <option value="" selected disabled>Select...</option>
+                            <option value="1">A</option>
+                            <option value="2">B</option>
+                            <option value="3">C</option>
+                            <option value="4">D</option>
+                            <option value="5">E</option>
+                        </select>
+                </div>
+            </div>
+
+            <div>
+                <label for="amount" class="block text-sm font-semibold leading-6 text-gray-900">Amount</label>
+                <div class="mt-2.5">
+                    <input type="text" name="amount" id="amount" formControlName="amount"
+                        autocomplete="given-name"
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+            </div>
+            <div>
+                <label for="initialdeposit" class="block text-sm font-semibold leading-6 text-gray-900">Initial Deposit</label>
+                <div class="mt-2.5">
+                    <input type="text" name="initialdeposit" id="initialdeposit" formControlName="initialdeposit"
+                        autocomplete="family-name"
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+            </div>
+
+            <div>
+                <label for="interest" class="block text-sm font-semibold leading-6 text-gray-900">Interest</label>
+                <div class="mt-2.5">
+                    <input type="text" name="interest" id="interest" formControlName="interest"
+                        autocomplete="given-name"
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+            </div>
+            <div>
+                <label for="terms" class="block text-sm font-semibold leading-6 text-gray-900">Terms</label>
+                <div class="mt-2.5">
+                    <input type="text" name="terms" id="terms" formControlName="terms"
+                        autocomplete="family-name"  placeholder="Please Enter Terms in years."
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-10">
+            <button type="submit"
+                class="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add Policy</button>
+        </div>
+    </form>
+</div>

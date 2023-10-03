@@ -1,0 +1,104 @@
+<div class="relative isolate bg-gray-200 px-6 py-24 sm:py-20 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Add New Customer</h2>
+        <!-- <p class="mt-2 text-lg leading-8 text-gray-600">Aute magna irure deserunt veniam aliqua magna enim voluptate.</p> -->
+      </div>
+    <form [formGroup]="addCustomerForm" (ngSubmit)="customerSubmitted()" class="mx-auto mt-12 max-w-xl sm:mt-16">
+        <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+            <div>
+                <label for="firstname" class="block text-sm font-semibold leading-6 text-gray-900">First name</label>
+                <div class="mt-2.5">
+                    <input type="text" name="firstname" id="firstname" formControlName="firstname"
+                        autocomplete="given-name"
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+            </div>
+            <div>
+                <label for="lastname" class="block text-sm font-semibold leading-6 text-gray-900">Last name</label>
+                <div class="mt-2.5">
+                    <input type="text" name="lastname" id="lastname" formControlName="lastname"
+                        autocomplete="family-name"
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+            </div>
+            <div class="sm:col-span-2">
+                <label for="caddress" class="block text-sm font-semibold leading-6 text-gray-900">Address</label>
+                <div class="mt-2.5">
+                    <input type="text" name="caddress" id="caddress" formControlName="caddress"
+                        autocomplete="organization"
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+            </div>
+            <div class="sm:col-span-2">
+                <label for="birthdate" class="block text-sm font-semibold leading-6 text-gray-900">DOB</label>
+                <div class="mt-2.5">
+                    <input type="text" name="birthdate" id="birthdate" formControlName="birthdate"
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+            </div>
+            <div>
+                <label for="contactno" class="block text-sm font-semibold leading-6 text-gray-900">Contact
+                    Number</label>
+                <div class="mt-2.5">
+                    <input type="tel" name="contactno" id="contactno" formControlName="contactno"
+                        autocomplete="tel"
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">E-mail</label>
+                <div class="mt-2.5">
+                    <input type="text" name="email" id="email" formControlName="email" autocomplete="family-name"
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+            </div>
+
+            <div>
+                <label for="panno" class="block text-sm font-semibold leading-6 text-gray-900">Pan Number</label>
+                <div class="mt-2.5">
+                    <input type="text" name="panno" id="panno" formControlName="panno" autocomplete="given-name"
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+            </div>
+            <div>
+                <label for="salary" class="block text-sm font-semibold leading-6 text-gray-900">Salary</label>
+                <div class="mt-2.5">
+                    <input type="text" name="salary" id="salary" formControlName="salary" autocomplete="family-name"
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+            </div>
+
+            <div>
+                <label for="empoloyertype" class="block text-sm font-semibold leading-6 text-gray-900">Employer
+                    Type</label>
+                <div class="mt-2.5">
+                    <!-- <input type="text" name="empoloyertype" id="empoloyertype" formControlName="empoloyertype"
+                        autocomplete="given-name"
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"> -->
+                      <select name="Select Employer Type" id="empoloyertype" formControlName="empoloyertype"
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"> 
+                        <!-- <option class="text-gray-400 placeholder:text-slate-400" value="" disabled selected>Select your option</option> -->
+                        <option value="" selected disabled>Select...</option>
+                        <option value="1">Salaried</option>
+                        <option value="2">Self-Dependent</option>
+                      </select>
+                    </div>
+            </div>
+            <div *ngIf="(empoloyertype.value)==='1'" >
+                <label for="employername" class="block text-sm font-semibold leading-6 text-gray-900">Employer
+                    Name </label>
+                <div class="mt-2.5">
+                    <input type="text" name="employername" id="employername" formControlName="employername"
+                        autocomplete="family-name"
+                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+            </div>
+
+        </div>
+        <div class="mt-10">
+            <button type="submit"
+                class="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add</button>
+        </div>
+    </form>
+</div>
+

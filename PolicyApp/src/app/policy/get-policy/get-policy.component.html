@@ -1,0 +1,55 @@
+<div class="relative isolate bg-gray-200 px-6 py-24 sm:py-20 lg:px-8">
+  <div class="inline-flex" >
+    <form [formGroup]="filterForm" (ngSubmit)="searchPolicyByValue()" >
+      <input placeholder="ById" formControlName="policyId" id="policyId">
+      <input placeholder="ByName" formControlName="policyName" id="policyName">
+      <input placeholder="ByCompany" formControlName="policyCompany" id="policyCompany">
+      <select formControlName="policyTypeName" id="policyTypeName" >
+        <option value="" selected>Select Policy Type</option>
+          <option>Vechicle Insurance</option>
+          <option>Travel Insurance</option>
+          <option>Life Insurance</option>
+          <option>Health Insurance</option>
+          <option>Child Plans</option> 
+          <option>Retirement Plans</option>
+      </select> 
+      <input placeholder="ByYears" formControlName="numberOfYears" id="numberOfYears">
+      <button type="submit" class="inline-flex w rounded-md bg-gray-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">Search</button>
+      <!-- <button type="submit" class="inline-flex w rounded-md bg-gray-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">Reset</button> -->
+    </form>
+  </div>
+    <table class="shadow-lg bg-white border-collapse mx-auto max-w-2xl text-center">
+        <thead>
+            <tr>
+                <th class="bg-gray-500 border text-left px-4 py-4 text-white">Sr.No.</th>
+                <th class="bg-gray-500 border text-left px-14 py-4 text-white">Policy Code</th>
+                <th class="bg-gray-500 border text-left px-14 py-4 text-white">Policy Name</th>
+                <th class="bg-gray-500 border text-left px-14 py-4 text-white">Policy Company</th>
+                <th class="bg-gray-500 border text-left px-14 py-4 text-white">Start Date</th>
+                <th class="bg-gray-500 border text-left px-8 py-4 text-white">Action</th>
+              </tr>
+        </thead>
+        <tbody>
+            <tr
+          class="hover:bg-gray-300 focus:bg-gray-200"
+          tabindex="0"
+          *ngFor="let i of allPolicy" >
+          <td class="border px-4 py-4">{{i.policyId}}</td>
+          <td class="border px-8 py-4">{{i.policyCode}}</td>
+          <td class="border px-8 py-4">{{i.policyName}}</td>
+          <td class="border px-8 py-4">{{i.policyCompany}}</td>
+          <td class="border px-8 py-4">{{i.policyStartDate | date:'dd-MM-yyyy'}}</td>
+          <td class="border px-8 py-4">
+            <button type="submit" routerLink="/policy/policy-details/{{i.policyId}}" 
+              class="block w-full rounded-md bg-gray-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">
+             View
+            </button>
+          </td>          
+        </tr>
+        </tbody>
+        
+      </table>
+    </div>
+
+
+  
